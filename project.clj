@@ -5,7 +5,11 @@
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-figwheel "0.5.10"]]
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [; Dev:
+                 [proto-repl "0.3.1"]
+                 
+                 ; Runtime:
+                 [org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.521"]
                  [reagent "0.6.1"]]
 

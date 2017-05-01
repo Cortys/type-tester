@@ -1,3 +1,5 @@
 (ns type-tester.core)
 
-(js/console.log "Hello, World!")
+(enable-console-print!)
+
+(println "Hello, World!")
