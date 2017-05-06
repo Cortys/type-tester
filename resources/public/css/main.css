@@ -1,0 +1,20 @@
+body {
+	background-color: #151515;
+	color: #c42c2d;
+	font-family: Roboto;
+	font-weight: lighter;
+	margin: 0;
+	padding: 0;
+}
+
+#content {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.type-task {
+	font-size: 25vmin;
+}

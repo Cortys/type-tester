@@ -23,4 +23,6 @@
                                    :output-to "resources/public/js/main.js"
                                    :output-dir "resources/public/js/out"
                                    :pretty-print true
-                                   :source-map true}}]})
+                                   :source-map true}}]}
+
+  :figwheel {:css-dirs ["resources/public/css"]})
