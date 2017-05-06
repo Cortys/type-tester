@@ -1,5 +1,9 @@
-(ns type-tester.core)
+(ns type-tester.core
+  (:require [reagent.core :as r]))
 
-(enable-console-print!)
+(defn content
+  []
+  [:div [:h1 "Hello World!"]
+        [:p "This is a reagent test."]])
 
-(println "Hello, World!")
+(r/render [content] (.getElementById js/document "content"))

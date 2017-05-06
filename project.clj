@@ -7,7 +7,7 @@
 
   :dependencies [; Dev:
                  [proto-repl "0.3.1"]
-                 
+
                  ; Runtime:
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.521"]
