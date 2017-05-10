@@ -1,13 +1,14 @@
 body {
 	background-color: #151515;
-	color: #c42c2d;
+	color: #666666;
 	font-family: Roboto;
 	font-weight: lighter;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
-#content {
+#letters {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -17,4 +18,12 @@ body {
 
 .type-task {
 	font-size: 25vmin;
+	text-align: center;
+	width: 20vmin;
+	color: #c42c2d;
+}
+
+.type-task:nth-child(3) {
+	font-size: 10vmin;
+	color: hsl(359, 25%, 47%);
 }

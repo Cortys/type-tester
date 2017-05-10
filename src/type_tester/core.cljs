@@ -1,20 +1,41 @@
 (ns type-tester.core
   (:require [reagent.core :as r]))
 
-(defonce current-task (r/atom "A"))
+(def state (r/atom {:tasks '()}))
 
 (defn type-task
   [task]
-  [:div {:class "type-task"} @task])
+  [:div {:class "type-task"}
+   (:letter task)])
 
 (defn content
   []
-  [type-task current-task])
+  (let [state @state]
+       [:div {:id "letters"}
+        [type-task nil]
+        [type-task (second (:tasks state))]
+        [type-task (first (:tasks state))]]))
 
 (defn next-task!
   []
-  (reset! current-task (char (+ 65 (rand-int 26)))))
+  (swap! state update :tasks conj {:letter (char (+ 65 (rand-int 26)))}))
 
-(r/render [content] (.getElementById js/document "content"))
+(defn current-task
+  []
+  (second (:tasks @state)))
 
-(js/setInterval #(next-task!) 150)
+(defn key-pressed-handler!
+  [event]
+  (when (= (:letter (current-task)) (char (.-keyCode event)))
+        (next-task!)
+        (println @state)))
+
+(defn init!
+  []
+  (r/render [content] (.getElementById js/document "content"))
+  (.addEventListener js/document "keydown" key-pressed-handler!)
+
+  (next-task!)
+  (next-task!))
+
+(init!)
