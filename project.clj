@@ -11,6 +11,7 @@
                  ; Runtime:
                  [org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.521"]
+                 [amalloy/ring-buffer "1.2.1"]
                  [reagent "0.6.1"]]
 
   :main type-tester.core

@@ -17,13 +17,13 @@ body {
 }
 
 .type-task {
-	font-size: 25vmin;
 	text-align: center;
-	width: 20vmin;
-	color: #c42c2d;
-}
-
-.type-task:nth-child(3) {
+	width: 15vmin;
 	font-size: 10vmin;
 	color: hsl(359, 25%, 47%);
+}
+
+.type-task:first-child {
+	font-size: 20vmin;
+	color: #c42c2d;
 }
