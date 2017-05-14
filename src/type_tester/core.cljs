@@ -4,11 +4,12 @@
 
 (def buf-size 5)
 
-(def state (r/atom {:tasks (ring-buffer buf-size)}))
+(def state (r/atom {:count 0
+                    :tasks (ring-buffer buf-size)}))
 
 (defn type-task
   [task]
-  [:div {:class "type-task"}
+  [:div {:class "type-task", :key (:id task)}
    (:letter task)])
 
 (defn content
@@ -19,11 +20,12 @@
 
 (defn current-task
   []
-  (first (:tasks @state)))
+  (second (:tasks @state)))
 
 (defn next-task!
   []
-  (swap! state update :tasks conj {:letter (char (+ 65 (rand-int 26)))}))
+  (swap! state update :tasks conj {:id (:count (swap! state update :count inc))
+                                   :letter (char (+ 65 (rand-int 26)))}))
 
 (defn key-pressed-handler!
   [event]

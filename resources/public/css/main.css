@@ -17,13 +17,33 @@ body {
 }
 
 .type-task {
+	position: absolute;
 	text-align: center;
 	width: 15vmin;
 	font-size: 10vmin;
 	color: hsl(359, 25%, 47%);
+	transition: all 0.5s;
 }
 
 .type-task:first-child {
-	font-size: 20vmin;
+	opacity: 0;
+	transform: translateX(-15vmin) scale(3);
+}
+
+.type-task:nth-child(2) {
+	transform: scale(2);
 	color: #c42c2d;
+}
+
+.type-task:nth-child(3) {
+	transform: translateX(15vmin);
+}
+
+.type-task:nth-child(4) {
+	transform: translateX(30vmin);
+}
+
+.type-task:nth-child(5) {
+	transform: translateX(45vmin);
+	opacity: 0;
 }
