@@ -1,11 +1,48 @@
 body {
 	background-color: #151515;
-	color: #666666;
 	font-family: Roboto;
 	font-weight: lighter;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+}
+
+#controls {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50px;
+}
+
+#useNumbers {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	outline: none;
+}
+
+#useNumbers::before, #useNumbers::after {
+	color: #aaaaaa;
+	font-size: 12px;
+	cursor: pointer;
+	transition: all 0.1s;
+}
+
+#useNumbers::before {
+    content: "ABC";
+	padding-right: 5px;
+}
+
+#useNumbers::after {
+	content: "123";
+}
+
+#useNumbers:not(:checked)::before, #useNumbers:checked::after {
+	font-size: 16px;
+	color: #c42c2d;
 }
 
 #letters {
