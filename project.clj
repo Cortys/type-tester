@@ -9,10 +9,10 @@
                  [proto-repl "0.3.1"]
 
                  ; Runtime:
-                 [org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.521"]
-                 [amalloy/ring-buffer "1.2.1"]
-                 [reagent "0.6.1"]]
+                 [org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.520"]
+                 [amalloy/ring-buffer "1.3.0"]
+                 [reagent "0.8.1"]]
 
   :main type-tester.core
 
