@@ -2,7 +2,7 @@
   :description "A small ClojureScript experiment."
   :url "https://github.com/Cortys/type-tester"
 
-  :plugins [[lein-cljsbuild "1.1.5"]
+  :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.10"]]
 
   :dependencies [; Dev:
@@ -20,10 +20,16 @@
                         :source-paths ["src"]
                         :figwheel true
                         :compiler {:main type-tester.core
-                                   :asset-path "js/out"
+                                   :asset-path "js/dev"
                                    :output-to "resources/public/js/main.js"
-                                   :output-dir "resources/public/js/out"
+                                   :output-dir "resources/public/js/dev"
                                    :pretty-print true
-                                   :source-map true}}]}
+                                   :source-map true}}
+                       {:id "production"
+                        :source-paths ["src"]
+                        :compiler {:main type-tester.core
+                                   :output-to "resources/public/js/main.js"
+                                   :output-dir "target/out"
+                                   :optimizations :advanced}}]}
 
   :figwheel {:css-dirs ["resources/public/css"]})
